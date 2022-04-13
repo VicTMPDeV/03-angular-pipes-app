@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+//Prime Ng
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
