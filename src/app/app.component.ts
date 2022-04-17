@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pipesApp';
+  
+  public title = 'pipesApp';
+
+  public saludador(){
+    alert('soy un boton');
+  }
 }
