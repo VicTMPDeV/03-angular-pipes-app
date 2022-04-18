@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 //Internal Modules
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import { AppRouterModule } from './routes/app-router.module';
+import { CustomPipesModule } from './custom-pipes/custom-pipes.module';
+import { SharedModule } from './shared/shared.module';
+
+//Components (AppComponent only)
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +16,9 @@ import { AppRouterModule } from './routes/app-router.module';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    AppRouterModule
+    AppRouterModule,
+    CustomPipesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

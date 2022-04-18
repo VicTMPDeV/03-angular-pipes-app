@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-commons',
@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class CommonsComponent implements OnInit {
+export class CommonsComponent {
 
-  constructor() { }
+  public nameLower: string = 'victor';
+  public nameUpper: string = 'VICTOR';
+  public nameTitle: string = 'vIcToR';
 
-  ngOnInit(): void {
-  }
+  public currentDate: Date = new Date();
 
 }
