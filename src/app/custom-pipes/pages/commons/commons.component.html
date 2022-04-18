@@ -1,37 +1,55 @@
 <div class="text-layout">
-    <h1>Pipes Básicos</h1>
+    <h1>Pipes aplicables a Textos</h1>
     <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
 </div>
 
 <div class="p-grid">
-    <div class="p-col-4">
-        <p-card header="uppercase"
-                [subheader]="nameLower | uppercase">
-                {{nameLower | uppercase}}
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameLowerVariable | uppercase''">
+                <span ngNonBindable>{{ nameLowerVariable | uppercase }}</span>
         </p-card>
     </div>
-    <div class="p-col-4">
-        <p-card header="lowercase"
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                [subheader]="nameLower | uppercase">
+                {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameUpperVariable | lowercase''">
+                <span ngNonBindable>{{ nameUpperVariable | lowercase }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
                 [subheader]="nameUpper | lowercase">
                 {{nameUpper | lowercase}}
         </p-card>
     </div>
-    <div class="p-col-4">
-        <p-card header="titlecase"
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameTitleVariable | titlecase''">
+                <span ngNonBindable>{{ nameTitleVariable | titlecase }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
                 [subheader]="nameTitle | titlecase">
                 {{nameTitle | titlecase}}
         </p-card>
     </div>
 </div>
-
 <div class="text-layout">
-    <h1>Date | Fecha | Pipe</h1>
+    <h1>Pipes aplicables a Fechas</h1>
     <h3>Pipe para formatear las fechas.</h3>
 </div>
 
 <div class="p-grid">
     <div class="p-col-6">
-        <p-card >
+        <p-card header="Código"
+                subheader="fecha: Date = new Date();">
             <ul>
                 <li> fecha </li>
                 <li> fecha | date </li>
@@ -41,10 +59,18 @@
                 <li> fecha | date:'MMMM dd, yyyy' </li>
                 <li> fecha | date:'dd <b>\'</b>-<b>\'</b> MMMM <b>\'</b>-<b>\'</b> yyyy' -> <b>\'</b> sirve para escapar caracteres en la expresión</li>
             </ul>
+            <hr/>
+            <ul>
+                <li> currentDate | date:'long':'GMT+1' -> La hora en Canarias es... </li>
+                <li> currentDate | date:'long':'':'en' -> Si quiero usar el locale español argentino... </li>
+                <li> currentDate | date:'long':'':'en' -> Si quiero usar el locale inglés... </li>
+                <li> currentDate | date:'long':'':'fr' -> Si quiero usar el locale francés... </li>
+            </ul>
         </p-card>
     </div>
     <div class="p-col-6">
-        <p-card >
+        <p-card header="Resultado"
+                subheader="pipe aplicado a la variable">
             <ul>
                 <li> {{currentDate}} </li>
                 <li> {{currentDate | date}} </li>
@@ -54,6 +80,16 @@
                 <li> {{currentDate | date:'MMMM dd, yyyy'}} </li>
                 <li> {{currentDate | date:'dd \'de\' MMMM \'de\' yyyy'}} </li>
             </ul> 
+            <hr/>
+            <ul>
+                <li> {{currentDate | date:'long':'GMT+1'}} </li>
+                <!-- CUIDADO CON LOS LOCALES DE DIFERENTES ZONAS, 'es' ES EL GENÉRICO Y CUBRE es-AR, PERO DE NO SER ASÍ HABRÍA QUE IMPORTARLO LITERALMENTE EN EL MÓDULO -->
+                <li> {{currentDate | date:'long':'GMT-2':'es-AR'}} </li>
+                <!-- HAY QUE INDICAR LOS PARAMETROS EN EL ORDEN QUE VIENEN AUNQUE ESTÉN VACÍOS -->
+                <li> {{currentDate | date:'long':'':'en'}} </li>
+                <!-- ANGLUAR IMPORTA POR DEFECTO EL LOCALE DE INGLÉS, PERO NO LOS DEMÁS, POR ESO DA UN ERROR Y TENDREMOS QUE IMPORTAR OTRO LOCALE -->
+                <li> {{currentDate | date:'long':'':'fr'}} </li>
+            </ul>
         </p-card>
     </div>
 </div>

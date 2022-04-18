@@ -10,10 +10,16 @@ import { SharedModule } from './shared/shared.module';
 //Components (AppComponent only)
 import { AppComponent } from './app.component';
 
-//Cambiar el Locale de la App
+//Add App's Locales
+// Step 1 -> import
 import localeEs from '@angular/common/locales/es';
+// import { default as localeEs } from '@angular/common/locales/es'; -> When something is exported as default (if we see inside package), these forms are correct
+import localeFr from '@angular/common/locales/fr';
+// Step 2 -> register imported
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs);
+registerLocaleData(localeFr);
+
 
 @NgModule({
   declarations: [
@@ -26,6 +32,7 @@ registerLocaleData(localeEs);
     SharedModule
   ],
   providers: [
+    //Sets default App locale
     { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
