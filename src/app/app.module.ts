@@ -1,5 +1,5 @@
 //External Modules
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 //Internal Modules
@@ -9,6 +9,11 @@ import { SharedModule } from './shared/shared.module';
 
 //Components (AppComponent only)
 import { AppComponent } from './app.component';
+
+//Cambiar el Locale de la App
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import { AppComponent } from './app.component';
     CustomPipesModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
