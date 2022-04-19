@@ -49,22 +49,25 @@
 <div class="p-grid">
     <div class="p-col-6">
         <p-card header="Código"
-                subheader="fecha: Date = new Date();">
+                subheader="fecha: Date = new Date(); (no es moment.js)">
             <ul>
                 <li> fecha </li>
+            </ul>
+            <hr/>
+            <ul>
                 <li> fecha | date </li>
                 <li> fecha | date:'short' </li>
                 <li> fecha | date:'long' </li>
                 <li> fecha | date:'MMMM' </li>
                 <li> fecha | date:'MMMM dd, yyyy' </li>
-                <li> fecha | date:'dd <b>\'</b>-<b>\'</b> MMMM <b>\'</b>-<b>\'</b> yyyy' -> <b>\'</b> sirve para escapar caracteres en la expresión</li>
+                <li> fecha | date:'dd <b>\'</b>de<b>\'</b> MMMM <b>\'</b>de<b>\'</b> yyyy' -> <b>\'</b> sirve para escapar caracteres en la expresión</li>
             </ul>
             <hr/>
             <ul>
-                <li> currentDate | date:'long':'GMT+1' -> La hora en Canarias es... </li>
-                <li> currentDate | date:'long':'':'en' -> Si quiero usar el locale español argentino... </li>
-                <li> currentDate | date:'long':'':'en' -> Si quiero usar el locale inglés... </li>
-                <li> currentDate | date:'long':'':'fr' -> Si quiero usar el locale francés... </li>
+                <li> fecha | date:'long':'GMT+1' -> La hora en Canarias es... </li>
+                <li> fecha | date:'long':'':'en' -> Si quiero usar el locale español argentino... </li>
+                <li> fecha | date:'long':'':'en' -> Si quiero usar el locale inglés... </li>
+                <li> fecha | date:'long':'':'fr' -> Si quiero usar el locale francés... </li>
             </ul>
         </p-card>
     </div>
@@ -73,6 +76,9 @@
                 subheader="pipe aplicado a la variable">
             <ul>
                 <li> {{currentDate}} </li>
+            </ul>
+            <hr/>
+            <ul>
                 <li> {{currentDate | date}} </li>
                 <li> {{currentDate | date:'short'}} </li>
                 <li> {{currentDate | date:'long'}} </li>

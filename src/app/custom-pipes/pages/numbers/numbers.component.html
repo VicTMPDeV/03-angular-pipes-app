@@ -1,1 +1,79 @@
-<p>numbers works!</p>
+<div class="text-layout">
+    <h1>Pipes aplicables a Números</h1>
+    <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="public bigNumber: number = 2567789.5567;">
+                <span ngNonBindable>{{ bigNumber | number }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                subheader="2567789.5567">
+                {{bigNumber | number}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ bigNumber | number:'.2-2' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{bigNumber | number:'.2-2'}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ bigNumber | number:'.2-8' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{bigNumber | number:'.2-8'}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ bigNumber | number:'.8-8' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{bigNumber | number:'.8-8'}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ bigNumber | number:'10.8-8' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{bigNumber | number:'10.8-8'}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ (bigNumber+1000000) | number:'1.2-2' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{(bigNumber+1000000) | number:'1.2-2'}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código">
+                <span ngNonBindable>{{ bigNumber | number:'1.2-2':'en' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado">
+                {{bigNumber | number:'1.2-2':'en'}}
+        </p-card>
+    </div>
+</div>
