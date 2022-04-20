@@ -5,6 +5,11 @@ import { MenuItem } from 'primeng/api'; //PrimeNG components
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styles: [
+    `
+    img.logo {
+      height: 3rem;
+    }
+    `
   ]
 })
 export class MenuComponent implements OnInit {
@@ -37,7 +42,7 @@ export class MenuComponent implements OnInit {
             routerLink: 'dates'
           },
           {
-            label: 'No Comunes',
+            label: 'i18n',
             icon: 'pi pi-globe',
             routerLink: 'not-commons'
           }

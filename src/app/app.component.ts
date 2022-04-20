@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+//Services
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   
-  public title = 'pipesApp';
+  constructor(private primeNgConfig: PrimeNGConfig){}
 
-  public saludador(){
-    alert('soy un boton');
+  ngOnInit(): void {
+    this.primeNgConfig.ripple = true; //Efecto splash al pulsar cualquier botón de la interfaz
   }
+  
 }

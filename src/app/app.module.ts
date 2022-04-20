@@ -1,6 +1,7 @@
 //External Modules
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //Components with animation
 
 //Internal Modules
 import { AppRouterModule } from './routes/app-router.module';
@@ -27,6 +28,7 @@ registerLocaleData(localeFr);
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRouterModule,
     CustomPipesModule,
     SharedModule
