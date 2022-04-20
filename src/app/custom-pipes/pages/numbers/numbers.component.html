@@ -1,6 +1,10 @@
 <div class="text-layout">
-    <h1>Pipes aplicables a Números</h1>
-    <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+    <h1>
+        <span style="margin-right: 1.5rem;">
+            <i class="pi pi-dollar" style="font-size: 2rem"></i>
+        </span>Pipes aplicables a Números
+    </h1>
+    <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
 </div>
 
 <div class="p-grid">
@@ -79,6 +83,38 @@
 </div>
 
 <div class="text-layout">
+    <h1>Pipes aplicables a Porcentajes</h1>
+    <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="public percentNumber: number = 0.75;">
+                <span ngNonBindable>{{ percentNumber | percent }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                subheader="0.75">
+                {{percentNumber | percent }}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="public percentNumber: number = 0.75;">
+                <span ngNonBindable>{{ percentNumber | percent:'.2-2' }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                subheader="0.75">
+                {{percentNumber | percent:'.2-2' }}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
     <h1>Pipes aplicables a Divisas</h1>
     <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
 </div>
@@ -114,38 +150,6 @@
     <div class="p-col-6">
         <p-card header="Resultado">
                 {{currencyNumber | currency:'EUR':'symbol-narrow':'1.2-4'}}
-        </p-card>
-    </div>
-</div>
-
-<div class="text-layout">
-    <h1>Pipes aplicables a Porcentajes</h1>
-    <h3>Pipes incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
-</div>
-
-<div class="p-grid">
-    <div class="p-col-6">
-        <p-card header="Código"
-                subheader="public percentNumber: number = 0.75;">
-                <span ngNonBindable>{{ percentNumber | percent }}</span>
-        </p-card>
-    </div>
-    <div class="p-col-6">
-        <p-card header="Resultado"
-                subheader="0.75">
-                {{percentNumber | percent }}
-        </p-card>
-    </div>
-    <div class="p-col-6">
-        <p-card header="Código"
-                subheader="public percentNumber: number = 0.75;">
-                <span ngNonBindable>{{ percentNumber | percent:'.2-2' }}</span>
-        </p-card>
-    </div>
-    <div class="p-col-6">
-        <p-card header="Resultado"
-                subheader="0.75">
-                {{percentNumber | percent:'.2-2' }}
         </p-card>
     </div>
 </div>

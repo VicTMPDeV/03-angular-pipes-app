@@ -22,14 +22,19 @@ export class MenuComponent implements OnInit {
         icon: 'pi pi-desktop',
         items: [
           {
-            label: 'Textos y Fechas',
+            label: 'Textos',
             icon: 'pi pi-align-left',
             routerLink: '/'
           },
           {
-            label: 'Números',
+            label: 'Numéricos',
             icon: 'pi pi-dollar',
             routerLink: 'numbers'
+          },
+          {
+            label: 'Fechas',
+            icon: 'pi pi-calendar',
+            routerLink: 'dates'
           },
           {
             label: 'No Comunes',

@@ -1,0 +1,47 @@
+<div class="text-layout">
+    <h1>
+        <span style="margin-right: 1.5rem;">
+            <i class="pi pi-align-left" style="font-size: 2rem"></i>
+        </span>Pipes aplicables a Textos
+    </h1>
+    <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameLowerVariable | uppercase''">
+                <span ngNonBindable>{{ nameLowerVariable | uppercase }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                [subheader]="nameLower | uppercase">
+                {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameUpperVariable | lowercase''">
+                <span ngNonBindable>{{ nameUpperVariable | lowercase }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                [subheader]="nameUpper | lowercase">
+                {{nameUpper | lowercase}}
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Código"
+                subheader="[subheader]= ''nameTitleVariable | titlecase''">
+                <span ngNonBindable>{{ nameTitleVariable | titlecase }}</span>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card header="Resultado"
+                [subheader]="nameTitle | titlecase">
+                {{nameTitle | titlecase}}
+        </p-card>
+    </div>
+</div>

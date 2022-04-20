@@ -6,23 +6,26 @@ import { CommonModule } from '@angular/common';
 import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 
 //Components (Pages)
+import { DatesComponent } from './pages/dates/dates.component';
 import { NumbersComponent } from './pages/numbers/numbers.component';
 import { NotCommonsComponent } from './pages/not-commons/not-commons.component';
-import { CommonsComponent } from './pages/commons/commons.component';
 import { SortComponent } from './pages/sort/sort.component';
+import { TextsComponent } from './pages/texts/texts.component';
 
 @NgModule({
   declarations: [
+    DatesComponent,
     NumbersComponent,
     NotCommonsComponent,
-    CommonsComponent,
-    SortComponent
+    SortComponent,
+    TextsComponent
   ],
   exports: [
+    DatesComponent,
     NumbersComponent,
     NotCommonsComponent,
-    CommonsComponent,
-    SortComponent
+    SortComponent,
+    TextsComponent
   ],
   imports: [
     CommonModule,
