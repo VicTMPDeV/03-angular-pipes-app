@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class NotCommonsComponent {
 
   // i18nSelect
-  persons = {
+  private persons = {
     person1 : {
       'maleName':'Víctor',
       'gender':'masculino'
@@ -20,19 +20,27 @@ export class NotCommonsComponent {
     }
   }
 
-  selectMap = {
+  get getPersons(){
+    return this.persons;
+  }
+
+  public selectMap = {
     'masculino': 'invitarlo',
     'femenino': 'invitarla'
   }
 
   //i18nPlural
-  customers = {
+  private customers = {
     none: [],
     one: ['Víctor'],
     many: ['Víctor','Laura','Avena']
   }
+
+  get getCustomers(){
+    return this.customers;
+  }
     
-  pluralMap = {
+  public pluralMap = {
     '=0' : 'no tenemos ningún cliente esperando.',
     '=1' : 'tenemos un cliente esperando.',
     'other' : 'tenemos # clientes esperando.' // symbol # is a wildcard

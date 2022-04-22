@@ -25,14 +25,14 @@
     </div>
     <div class="p-col-6">
         <p-fieldset legend="i18nSelect Pipe - (Resultado)" [toggleable]="true">
-            <p>Hola <b>{{persons.person1.maleName}}</b>,
+            <p>Hola <b>{{getPersons.person1.maleName}}</b>,
             <br/> 
-            es un placer <b>{{persons.person1.gender | i18nSelect:selectMap}}</b> 
+            es un placer <b>{{getPersons.person1.gender | i18nSelect:selectMap}}</b> 
             a nuestro evento.</p>
             <hr/>
-            <p>Hola <b>{{persons.person2.femaleName}}</b>, 
+            <p>Hola <b>{{getPersons.person2.femaleName}}</b>, 
             <br/>
-            es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
+            es un placer <b>{{getPersons.person2.gender | i18nSelect:selectMap}}</b> 
             a nuestro evento.</p>
         </p-fieldset>
     </div>
@@ -40,16 +40,20 @@
         <p-fieldset legend="i18nPlural Pipe - (Código)" [toggleable]="true">
             <span ngNonBindable>
                 <p>Actualmente <b>{{customers.none.length | i18nPlural:pluralMap}}</b>.</p>
+                <hr/>
                 <p>Actualmente <b>{{customers.one.length | i18nPlural:pluralMap}}</b>.</p>
+                <hr/>
                 <p>Actualmente <b>{{customers.many.length | i18nPlural:pluralMap}}</b>.</p>
             </span>
         </p-fieldset>
     </div>
     <div class="p-col-6">
         <p-fieldset legend="i18nPlural Pipe - (Resultado)" [toggleable]="true">
-            <p>Actualmente {{customers.none.length | i18nPlural:pluralMap}}.</p>
-            <p>Actualmente {{customers.one.length | i18nPlural:pluralMap}}.</p>
-            <p>Actualmente {{customers.many.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{getCustomers.none.length | i18nPlural:pluralMap}}.</p>
+            <hr/>
+            <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}.</p>
+            <hr/>
+            <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}.</p>
         </p-fieldset>
     </div>
 </div>
