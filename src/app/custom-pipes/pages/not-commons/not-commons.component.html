@@ -9,14 +9,47 @@
 
 <div class="p-grid">
     <div class="p-col-6">
-        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
-            Content
+        <p-fieldset legend="i18nSelect Pipe - (Código)" [toggleable]="true">
+            <span ngNonBindable>
+                <p>Hola <b>{{persons.person1.maleName}}</b>, 
+                    <br/>
+                    es un placer <b>{{persons.person1.gender | i18nSelect:selectMap}}</b> 
+                    a nuestro evento.</p>
+                    <hr/>
+                    <p>Hola <b>{{persons.person2.femaleName}}</b>,
+                    <br/> 
+                    es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
+                    a nuestro evento.</p>
+            </span>
         </p-fieldset>
     </div>
     <div class="p-col-6">
-        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
-            Content
+        <p-fieldset legend="i18nSelect Pipe - (Resultado)" [toggleable]="true">
+            <p>Hola <b>{{persons.person1.maleName}}</b>,
+            <br/> 
+            es un placer <b>{{persons.person1.gender | i18nSelect:selectMap}}</b> 
+            a nuestro evento.</p>
+            <hr/>
+            <p>Hola <b>{{persons.person2.femaleName}}</b>, 
+            <br/>
+            es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
+            a nuestro evento.</p>
         </p-fieldset>
     </div>
-
+    <div class="p-col-6">
+        <p-fieldset legend="i18nPlural Pipe - (Código)" [toggleable]="true">
+            <span ngNonBindable>
+                <p>Actualmente <b>{{customers.none.length | i18nPlural:pluralMap}}</b>.</p>
+                <p>Actualmente <b>{{customers.one.length | i18nPlural:pluralMap}}</b>.</p>
+                <p>Actualmente <b>{{customers.many.length | i18nPlural:pluralMap}}</b>.</p>
+            </span>
+        </p-fieldset>
+    </div>
+    <div class="p-col-6">
+        <p-fieldset legend="i18nPlural Pipe - (Resultado)" [toggleable]="true">
+            <p>Actualmente {{customers.none.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{customers.one.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{customers.many.length | i18nPlural:pluralMap}}.</p>
+        </p-fieldset>
+    </div>
 </div>
