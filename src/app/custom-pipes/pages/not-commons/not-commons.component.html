@@ -65,6 +65,7 @@
             <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}</p>
             <hr/>
             <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}
+                <!-- ESTO SE PUEDE HACER CON UN SLICE PIPE -->
                 <span *ngFor="let customer of getCustomers.many; let i = index">
                     {{customer}}<span *ngIf="i+1 < getCustomers.many.length">, </span> 
                                 <span *ngIf="i+1 === getCustomers.many.length">. </span> 
@@ -87,7 +88,9 @@
     <div class="p-col-6">
         <p-fieldset legend="Slice Pipe - (Resultado)" [toggleable]="true">
             <b>Original</b>
-            <pre *ngFor="let customer of getCustomers.many">{{customer}}</pre>
+            <pre>{{getCustomers.many}}</pre>
+            <b>slice : 0 : 2</b>
+            <pre>{{getCustomers.many | slice:0}}</pre>
         </p-fieldset>
     </div>
 </div>
