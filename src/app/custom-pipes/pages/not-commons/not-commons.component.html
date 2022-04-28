@@ -25,15 +25,20 @@
     </div>
     <div class="p-col-6">
         <p-fieldset legend="i18nSelect Pipe - (Resultado)" [toggleable]="true">
-            <p>Hola <b>{{getPersons.person1.maleName}}</b>,
+            <p>Hola <b>{{getPersons.person1.name}}</b>,
             <br/> 
             es un placer <b>{{getPersons.person1.gender | i18nSelect:selectMap}}</b> 
             a nuestro evento.</p>
             <hr/>
-            <p>Hola <b>{{getPersons.person2.femaleName}}</b>, 
+            <p>Hola <b>{{getPersons.person2.name}}</b>, 
             <br/>
             es un placer <b>{{getPersons.person2.gender | i18nSelect:selectMap}}</b> 
             a nuestro evento.</p>
+            <hr/>
+            <button pButton 
+                    label="Cambiar Persona" 
+                    class="p-button-secondary"
+                    (click)="changePerson()"></button>
         </p-fieldset>
     </div>
     <div class="p-col-6">
@@ -54,6 +59,11 @@
             <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}.</p>
             <hr/>
             <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}.</p>
+            <hr/>
+            <button pButton 
+                    label="Borrar Cliente" 
+                    class="p-button-danger"
+                    (click)="deleteClient()"></button>
         </p-fieldset>
     </div>
 </div>

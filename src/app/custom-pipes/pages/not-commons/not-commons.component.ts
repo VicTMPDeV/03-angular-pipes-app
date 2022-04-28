@@ -11,12 +11,12 @@ export class NotCommonsComponent {
   // i18nSelect
   private persons = {
     person1 : {
-      'maleName':'Víctor',
-      'gender':'masculino'
+      'name':'Víctor',
+      'gender':'male'
     },
     person2 : {
-      'femaleName':'Laura',
-      'gender':'femenino'
+      'name':'Laura',
+      'gender':'female'
     }
   }
 
@@ -25,15 +25,15 @@ export class NotCommonsComponent {
   }
 
   public selectMap = {
-    'masculino': 'invitarlo',
-    'femenino': 'invitarla'
+    'male': 'invitarlo',
+    'female': 'invitarla'
   }
 
   //i18nPlural
   private customers = {
     none: [],
     one: ['Víctor'],
-    many: ['Víctor','Laura','Avena']
+    many: ['Víctor','Laura','Avena','Eleuterio','Atanasio']
   }
 
   get getCustomers(){
@@ -44,6 +44,15 @@ export class NotCommonsComponent {
     '=0' : 'no tenemos ningún cliente esperando.',
     '=1' : 'tenemos un cliente esperando.',
     'other' : 'tenemos # clientes esperando.' // symbol # is a wildcard
+  }
+
+  changePerson() {
+    this.persons.person1.name = 'Victoria';
+    this.persons.person1.gender = 'female';
+  }
+
+  deleteClient(){
+    this.customers.many.pop();
   }
 
 }
