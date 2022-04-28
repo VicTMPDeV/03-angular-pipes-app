@@ -29,6 +29,11 @@ export class NotCommonsComponent {
     'female': 'invitarla'
   }
 
+  changePerson() {
+    this.persons.person1.name = 'Victoria';
+    this.persons.person1.gender = 'female';
+  }
+
   //i18nPlural
   private customers = {
     none: [],
@@ -39,24 +44,22 @@ export class NotCommonsComponent {
   get getCustomers(){
     return this.customers;
   }
-    
+
   public pluralMap = {
     '=0' : 'no tenemos ningún cliente esperando.',
     '=1' : 'tenemos un cliente esperando.',
     'other' : 'tenemos # clientes esperando :' // symbol # is a wildcard
   }
 
-  changePerson() {
-    this.persons.person1.name = 'Victoria';
-    this.persons.person1.gender = 'female';
-  }
-
   deleteClient(){
     this.customers.many.pop();
   }
 
-  showClients(){
-    
+  //Slice
+  public heroes = ['Capitán América','Spiderman','Iron Man','Thor','Soldado de Invierno'];
+
+  deleteHeroe(){
+    this.heroes.pop();  
   }
 
 }

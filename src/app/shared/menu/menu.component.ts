@@ -42,9 +42,21 @@ export class MenuComponent implements OnInit {
             routerLink: 'dates'
           },
           {
-            label: 'i18n',
-            icon: 'pi pi-globe',
-            routerLink: 'not-commons'
+            label: 'Otros',
+            icon: 'pi pi-box',
+            items: [
+              // TODO: implement anchor in routing
+              {
+                label: 'i18n',
+                icon: 'pi pi-globe',
+                routerLink: 'not-commons'
+              },
+              {
+                label: 'Slice',
+                icon: 'pi pi-ellipsis-h',
+                routerLink: 'not-commons'
+              },
+            ]
           }
         ]
       },

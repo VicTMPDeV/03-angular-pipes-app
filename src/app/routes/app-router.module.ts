@@ -1,6 +1,6 @@
 //External Modules
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 //Internal Modules
 import { TextsComponent } from '../custom-pipes/pages/texts/texts.component';
 import { DatesComponent } from '../custom-pipes/pages/dates/dates.component';
@@ -40,9 +40,15 @@ const routes: Routes = [
   }
 ];
 
+// TODO: implement anchor in routing
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled'
+};
+
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, routerOptions)
   ],
   exports: [
     RouterModule

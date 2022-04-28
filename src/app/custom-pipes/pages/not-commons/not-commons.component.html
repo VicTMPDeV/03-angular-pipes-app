@@ -1,96 +1,153 @@
-<div class="text-layout">
-    <h1>
-        <span style="margin-right: 1.5rem;">
-            <i class="pi pi-globe" style="font-size: 2rem"></i>
-        </span>Pipes de Internacionalización (i18n)
-    </h1>
-    <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+<div id="part1">
+    <div class="text-layout">
+        <h1>
+            <span style="margin-right: 1.5rem;">
+                <i class="pi pi-globe" style="font-size: 2rem"></i>
+            </span>Pipes de Internacionalización (i18n)
+        </h1>
+        <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-6">
+            <p-fieldset legend="i18nSelect Pipe - (Código)" [toggleable]="true">
+                <span ngNonBindable>
+                    <p>Hola <b>{{persons.person1.maleName}}</b>, 
+                        <br/>
+                        es un placer <b>{{persons.person1.gender | i18nSelect:selectMap}}</b> 
+                        a nuestro evento.</p>
+                        <hr/>
+                        <p>Hola <b>{{persons.person2.femaleName}}</b>,
+                        <br/> 
+                        es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
+                        a nuestro evento.</p>
+                        <hr/>
+                        <p><b>(click)="changePerson()"</b></p>
+                </span>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="i18nSelect Pipe - (Resultado)" [toggleable]="true">
+                <p>Hola <b>{{getPersons.person1.name}}</b>,
+                <br/> 
+                es un placer <b>{{getPersons.person1.gender | i18nSelect:selectMap}}</b> 
+                a nuestro evento.</p>
+                <hr/>
+                <p>Hola <b>{{getPersons.person2.name}}</b>, 
+                <br/>
+                es un placer <b>{{getPersons.person2.gender | i18nSelect:selectMap}}</b> 
+                a nuestro evento.</p>
+                <hr/>
+                <button pButton 
+                        label="Cambiar Persona" 
+                        class="p-button-secondary"
+                        style="margin-top: 0.3rem"
+                        (click)="changePerson()">
+                </button>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="i18nPlural Pipe - (Código)" [toggleable]="true">
+                <span ngNonBindable>
+                    <p>Actualmente <b>{{customers.none.length | i18nPlural:pluralMap}}</b>.</p>
+                    <hr/>
+                    <p>Actualmente <b>{{customers.one.length | i18nPlural:pluralMap}}</b>.</p>
+                    <hr/>
+                    <p>Actualmente <b>{{customers.many.length | i18nPlural:pluralMap}}</b>.</p>
+                    <hr/>
+                    <p><b>(click)="deleteClient()"</b></p>
+                </span>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="i18nPlural Pipe - (Resultado)" [toggleable]="true">
+                <p>Actualmente {{getCustomers.none.length | i18nPlural:pluralMap}}</p>
+                <hr/>
+                <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}</p>
+                <hr/>
+                <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}
+                    <!-- ESTO SE PUEDE HACER CON UN SLICE PIPE -->
+                    <span *ngFor="let customer of getCustomers.many; let i = index">
+                        {{customer}}<span *ngIf="i+1 < getCustomers.many.length">, </span> 
+                                    <span *ngIf="i+1 === getCustomers.many.length">. </span> 
+                </span>
+                </p>
+                <hr/>
+                <button pButton 
+                        label="Borrar Cliente" 
+                        class="p-button-danger"
+                        style="margin-top: 0.3rem"
+                        (click)="deleteClient()">
+                </button>
+            </p-fieldset>
+        </div>
+    </div>
 </div>
 
-<div class="p-grid">
-    <div class="p-col-6">
-        <p-fieldset legend="i18nSelect Pipe - (Código)" [toggleable]="true">
-            <span ngNonBindable>
-                <p>Hola <b>{{persons.person1.maleName}}</b>, 
-                    <br/>
-                    es un placer <b>{{persons.person1.gender | i18nSelect:selectMap}}</b> 
-                    a nuestro evento.</p>
+<div id="part2">
+    <div class="text-layout">
+        <h1>
+            <span style="margin-right: 1.5rem;">
+                <i class="pi pi-ellipsis-h" style="font-size: 2rem"></i>
+            </span>Slice Pipes (Cortar elementos en Arrays y Strings)
+        </h1>
+        <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-6">
+            <p-fieldset legend="Slice Pipe - (Código)" [toggleable]="true">
+                <span ngNonBindable>
+                    <b>Original</b>
                     <hr/>
-                    <p>Hola <b>{{persons.person2.femaleName}}</b>,
-                    <br/> 
-                    es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
-                    a nuestro evento.</p>
+                    <p><b>{{heroes}}</b></p>
+                    <b>slice : 0 (posicion desde INCLUIDO) : N (posición hasta EXCLUIDO)</b>
                     <hr/>
-                    <p><b>(click)="changePerson()"</b></p>
-            </span>
-        </p-fieldset>
-    </div>
-    <div class="p-col-6">
-        <p-fieldset legend="i18nSelect Pipe - (Resultado)" [toggleable]="true">
-            <p>Hola <b>{{getPersons.person1.name}}</b>,
-            <br/> 
-            es un placer <b>{{getPersons.person1.gender | i18nSelect:selectMap}}</b> 
-            a nuestro evento.</p>
-            <hr/>
-            <p>Hola <b>{{getPersons.person2.name}}</b>, 
-            <br/>
-            es un placer <b>{{getPersons.person2.gender | i18nSelect:selectMap}}</b> 
-            a nuestro evento.</p>
-            <hr/>
-            <button pButton 
-                    label="Cambiar Persona" 
-                    class="p-button-secondary"
-                    style="margin-top: 0.3rem"
-                    (click)="changePerson()">
-            </button>
-        </p-fieldset>
-    </div>
-    <div class="p-col-6">
-        <p-fieldset legend="i18nPlural Pipe - (Código)" [toggleable]="true">
-            <span ngNonBindable>
-                <p>Actualmente <b>{{customers.none.length | i18nPlural:pluralMap}}</b>.</p>
+                    <p>{{heroes | slice:0}}</p>
+                    <hr/>
+                    <b>slice : 0 : 2</b>
+                    <hr/>
+                    <p>{{heroes | slice:0:2}}</p>
+                    <hr/>
+                    <b>slice : 1 : 3</b>
+                    <hr/>
+                    <p>{{heroes | slice:1:3}}</p>
+                    <hr/>
+                    <b>slice : 3 : (heroes.length)</b>
+                    <hr/>
+                    <p>{{heroes | slice:0:(heroes.length)}}</p>
+                    <hr/>
+                    <p><b>(click)="deleteHeroe()"</b></p>
+                    <hr/>
+                </span>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="Slice Pipe - (Resultado)" [toggleable]="true">
+                <b>Original</b>
                 <hr/>
-                <p>Actualmente <b>{{customers.one.length | i18nPlural:pluralMap}}</b>.</p>
+                <p><b>{{heroes}}</b></p>
+                <b>slice : 0</b>
                 <hr/>
-                <p>Actualmente <b>{{customers.many.length | i18nPlural:pluralMap}}</b>.</p>
+                <p>{{heroes | slice:0}}</p>
                 <hr/>
-                <p><b>(click)="deleteClient()"</b></p>
-            </span>
-        </p-fieldset>
-    </div>
-    <div class="p-col-6">
-        <p-fieldset legend="i18nPlural Pipe - (Resultado)" [toggleable]="true">
-            <p>Actualmente {{getCustomers.none.length | i18nPlural:pluralMap}}</p>
-            <hr/>
-            <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}</p>
-            <hr/>
-            <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}
-                <!-- ESTO SE PUEDE HACER CON UN SLICE PIPE -->
-                <span *ngFor="let customer of getCustomers.many; let i = index">
-                    {{customer}}<span *ngIf="i+1 < getCustomers.many.length">, </span> 
-                                <span *ngIf="i+1 === getCustomers.many.length">. </span> 
-            </span>
-            </p>
-            <hr/>
-            <button pButton 
-                    label="Borrar Cliente" 
-                    class="p-button-danger"
-                    style="margin-top: 0.3rem"
-                    (click)="deleteClient()">
-            </button>
-        </p-fieldset>
-    </div>
-    <div class="p-col-6">
-        <p-fieldset legend="Slice Pipe - (Código)" [toggleable]="true">
-
-        </p-fieldset>
-    </div>
-    <div class="p-col-6">
-        <p-fieldset legend="Slice Pipe - (Resultado)" [toggleable]="true">
-            <b>Original</b>
-            <pre>{{getCustomers.many}}</pre>
-            <b>slice : 0 : 2</b>
-            <pre>{{getCustomers.many | slice:0}}</pre>
-        </p-fieldset>
-    </div>
+                <b>slice : 0 : 2</b>
+                <hr/>
+                <p>{{heroes | slice:0:2}}</p>
+                <hr/>
+                <b>slice : 1 : 3</b>
+                <hr/>
+                <p>{{heroes | slice:1:3}}</p>
+                <hr/>
+                <b>slice : 3 : (heroes.length)</b>
+                <hr/>
+                <p>{{heroes | slice:0:(heroes.length)}}</p>
+                <hr/>
+                <button pButton 
+                        label="Chasca los dedos Thanos" 
+                        class="p-button-danger"
+                        (click)="deleteHeroe()">
+                </button>
+                <hr/>
+            </p-fieldset>
+        </div>
+    </div>    
 </div>
