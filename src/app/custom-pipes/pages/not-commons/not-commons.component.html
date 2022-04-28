@@ -20,6 +20,8 @@
                     <br/> 
                     es un placer <b>{{persons.person2.gender | i18nSelect:selectMap}}</b> 
                     a nuestro evento.</p>
+                    <hr/>
+                    <p><b>(click)="changePerson()"</b></p>
             </span>
         </p-fieldset>
     </div>
@@ -49,7 +51,10 @@
                 <p>Actualmente <b>{{customers.one.length | i18nPlural:pluralMap}}</b>.</p>
                 <hr/>
                 <p>Actualmente <b>{{customers.many.length | i18nPlural:pluralMap}}</b>.</p>
+                <hr/>
+                <p><b>(click)="deleteClient()"</b></p>
             </span>
+            
         </p-fieldset>
     </div>
     <div class="p-col-6">
