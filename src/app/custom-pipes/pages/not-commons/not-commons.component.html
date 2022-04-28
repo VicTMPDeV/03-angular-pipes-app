@@ -40,7 +40,9 @@
             <button pButton 
                     label="Cambiar Persona" 
                     class="p-button-secondary"
-                    (click)="changePerson()"></button>
+                    style="margin-top: 0.3rem"
+                    (click)="changePerson()">
+            </button>
         </p-fieldset>
     </div>
     <div class="p-col-6">
@@ -54,21 +56,38 @@
                 <hr/>
                 <p><b>(click)="deleteClient()"</b></p>
             </span>
-            
         </p-fieldset>
     </div>
     <div class="p-col-6">
         <p-fieldset legend="i18nPlural Pipe - (Resultado)" [toggleable]="true">
-            <p>Actualmente {{getCustomers.none.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{getCustomers.none.length | i18nPlural:pluralMap}}</p>
             <hr/>
-            <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{getCustomers.one.length | i18nPlural:pluralMap}}</p>
             <hr/>
-            <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}.</p>
+            <p>Actualmente {{getCustomers.many.length | i18nPlural:pluralMap}}
+                <span *ngFor="let customer of getCustomers.many; let i = index">
+                    {{customer}}<span *ngIf="i+1 < getCustomers.many.length">, </span> 
+                                <span *ngIf="i+1 === getCustomers.many.length">. </span> 
+            </span>
+            </p>
             <hr/>
             <button pButton 
                     label="Borrar Cliente" 
                     class="p-button-danger"
-                    (click)="deleteClient()"></button>
+                    style="margin-top: 0.3rem"
+                    (click)="deleteClient()">
+            </button>
+        </p-fieldset>
+    </div>
+    <div class="p-col-6">
+        <p-fieldset legend="Slice Pipe - (Código)" [toggleable]="true">
+
+        </p-fieldset>
+    </div>
+    <div class="p-col-6">
+        <p-fieldset legend="Slice Pipe - (Resultado)" [toggleable]="true">
+            <b>Original</b>
+            <pre *ngFor="let customer of getCustomers.many">{{customer}}</pre>
         </p-fieldset>
     </div>
 </div>

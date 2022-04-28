@@ -33,7 +33,7 @@ export class NotCommonsComponent {
   private customers = {
     none: [],
     one: ['Víctor'],
-    many: ['Víctor','Laura','Avena','Eleuterio','Atanasio']
+    many: ['Víctor','Laura','Avena','Danka']
   }
 
   get getCustomers(){
@@ -43,7 +43,7 @@ export class NotCommonsComponent {
   public pluralMap = {
     '=0' : 'no tenemos ningún cliente esperando.',
     '=1' : 'tenemos un cliente esperando.',
-    'other' : 'tenemos # clientes esperando.' // symbol # is a wildcard
+    'other' : 'tenemos # clientes esperando :' // symbol # is a wildcard
   }
 
   changePerson() {
@@ -53,6 +53,10 @@ export class NotCommonsComponent {
 
   deleteClient(){
     this.customers.many.pop();
+  }
+
+  showClients(){
+    
   }
 
 }
