@@ -196,7 +196,7 @@
     </div>
     <div class="p-grid">
         <div class="p-col-6">
-            <p-fieldset legend="Key-Value Pipe - (Código)" [toggleable]="true">
+            <p-fieldset legend="Json Pipe - (Código)" [toggleable]="true">
                 <span ngNonBindable>
                     <pre>{{heroesJson}}</pre>
                     <hr/>
@@ -214,6 +214,55 @@
                 <pre>{{heroesJson}}</pre>
                 <hr/>
                 <pre>{{heroesJson | json}}</pre>
+            </p-fieldset>
+        </div>
+    </div>    
+</div>
+
+<div id="part5">
+    <div class="text-layout">
+        <h1>
+            <span style="margin-right: 1.5rem;">
+                <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+            </span>Async Pipe
+        </h1>
+        <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+        
+    </div>
+    <div class="p-grid">
+        <div class="p-col-6">
+            <p-fieldset legend="Async Pipe - (Código)" [toggleable]="true">
+                <span ngNonBindable>
+                    <pre>{{myObservable}}</pre>
+                    <hr/>
+                    <pre>1º *ngIf="!(myObservable | async)" 2º {{myObservable | async}}</pre>
+                    <hr/>
+                    <pre>{{myPromise}}</pre>
+                    <hr/>
+                    <pre>1º *ngIf="!(myPromise | async)" 2º {{myPromise | async}}</pre>
+                    <hr/>
+                    <h4><u>A TENER EN CUENTA:</u></h4>
+                    <p>Solo funciona con Promises u Observables</p>
+                    <p>El Pipe Async se Suscribe internamente al Observable
+                        e imprime cada una de sus Emisiones</p>
+                    <p>Cada Pipe Async crea una suscripción nueva sobre el Observable,
+                        por eso se pintan dos valores al principio y da la sensación de estar mal.
+                    </p>
+                </span>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="Async Pipe - (Resultado)" [toggleable]="true">
+                <pre>{{myObservable}}</pre>
+                <hr/>
+                <pre *ngIf="!(myObservable | async)">Resolviendo Observable...</pre>
+                <pre>{{myObservable | async}}</pre>
+                <hr/>
+                <pre>{{myPromise}}</pre>
+                <hr/>
+                <pre *ngIf="!(myPromise | async)">Resolviendo Promise...</pre>
+                <pre>{{myPromise | async}}</pre>
+                <hr/>
             </p-fieldset>
         </div>
     </div>    

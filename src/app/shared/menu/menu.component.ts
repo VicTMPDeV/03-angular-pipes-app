@@ -66,6 +66,11 @@ export class MenuComponent implements OnInit {
                 icon: 'pi pi-sitemap',
                 routerLink: 'not-commons'
               },
+              {
+                label: 'Async',
+                icon: 'pi pi-spin pi-spinner',
+                routerLink: 'not-commons'
+              }
             ]
           }
         ]

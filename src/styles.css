@@ -8,6 +8,6 @@ html, body {
     color: var( --text-color);
 }
 
-#part2 {
-    margin-top: 2rem;
+#part2,#part3,#part4,#part5 {
+    margin-top: 5rem;
 }

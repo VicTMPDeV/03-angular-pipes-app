@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-not-commons',
@@ -89,6 +90,17 @@ export class NotCommonsComponent {
       poder: 'Es el dios del trueno'
     }
   ];
+
+  //Async Pipe - Observable
+  myObservable = interval(5000);
+
+  //Async Pipe - Promise
+  myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Datos de la Promise recibidos');
+      reject('Hubo un error y no se recibó la Promise');
+    }, 5000);
+  });
 
 
 }
