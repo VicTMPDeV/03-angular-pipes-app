@@ -88,7 +88,7 @@
         <h1>
             <span style="margin-right: 1.5rem;">
                 <i class="pi pi-ellipsis-h" style="font-size: 2rem"></i>
-            </span>Slice Pipes (Cortar elementos en Arrays y Strings)
+            </span>Slice Pipe (Cortar elementos en Arrays y Strings)
         </h1>
         <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
     </div>
@@ -147,6 +147,73 @@
                         (click)="deleteHeroe()">
                 </button>
                 <hr/>
+            </p-fieldset>
+        </div>
+    </div>    
+</div>
+
+<div id="part3">
+    <div class="text-layout">
+        <h1>
+            <span style="margin-right: 1.5rem;">
+                <i class="pi pi-map" style="font-size: 2rem"></i>
+            </span>Key-Value Pipe (Recorrer Objetos Literales JS)
+        </h1>
+        <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-6">
+            <p-fieldset legend="Key-Value Pipe - (Código)" [toggleable]="true">
+                
+                <p>Si intentamos recorrer un objeto literal JS con un ngFor,
+                    saltará un error porque no está preparado para ello.</p>
+                <p>Con el uso del keyvalue pipe, sí que podemos recorrer 
+                    el objeto literal con ngFor</p>
+
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="Key-Value Pipe - (Resultado)" [toggleable]="true">
+                <ul>
+                    <li *ngFor="let item of persona | keyvalue">
+                        <b>{{item.key}}</b> : {{item.value}}
+                    </li>
+                </ul>
+            </p-fieldset>
+        </div>
+    </div>    
+</div>
+
+<div id="part4">
+    <div class="text-layout">
+        <h1>
+            <span style="margin-right: 1.5rem;">
+                <i class="pi pi-sitemap" style="font-size: 2rem"></i>
+            </span>Json Pipe
+        </h1>
+        <h3>Incluídos en Angular (Usualmente en el CommonModule de @angular/common).</h3>
+        
+    </div>
+    <div class="p-grid">
+        <div class="p-col-6">
+            <p-fieldset legend="Key-Value Pipe - (Código)" [toggleable]="true">
+                <span ngNonBindable>
+                    <pre>{{heroesJson}}</pre>
+                    <hr/>
+                    <pre>{{heroesJson | json}}</pre>
+                    <hr/>
+                    <h4><u>A TENER EN CUENTA:</u></h4>
+                    <p>Convierte valores en JSON - (Muy útil para depurar)</p>
+                    <p>Como limitación, si el objeto tiene funciones que regresan
+                    otro objeto o algún valor, producirá un error.</p>
+                </span>
+            </p-fieldset>
+        </div>
+        <div class="p-col-6">
+            <p-fieldset legend="Key-Value Pipe - (Resultado)" [toggleable]="true">
+                <pre>{{heroesJson}}</pre>
+                <hr/>
+                <pre>{{heroesJson | json}}</pre>
             </p-fieldset>
         </div>
     </div>    

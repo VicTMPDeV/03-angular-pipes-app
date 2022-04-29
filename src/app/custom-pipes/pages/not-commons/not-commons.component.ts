@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class NotCommonsComponent {
 
-  // i18nSelect
+  // i18nSelect Pipe
   private persons = {
     person1 : {
       'name':'Víctor',
@@ -34,7 +34,7 @@ export class NotCommonsComponent {
     this.persons.person1.gender = 'female';
   }
 
-  //i18nPlural
+  //i18nPlural Pipe
   private customers = {
     none: [],
     one: ['Víctor'],
@@ -55,11 +55,40 @@ export class NotCommonsComponent {
     this.customers.many.pop();
   }
 
-  //Slice
+  //Slice Pipe
   public heroes = ['Capitán América','Spiderman','Iron Man','Thor','Soldado de Invierno'];
 
   deleteHeroe(){
     this.heroes.pop();  
   }
+
+  //Key-Value Pipe
+  public persona = {
+    nombre: 'Víctor',
+    apellidos: 'Morales Pérez',
+    edad: 35, 
+    casado: false
+  }
+
+  //Json Pipe
+  public heroesJson = [
+    {
+      nombre:'Capitán América',
+      poder: 'Repartir hostias como panes'
+    },
+    {
+      nombre:'Spiderman',
+      poder: 'Agilidad extrema'
+    },
+    {
+      nombre:'Iron Man',
+      poder: 'Mucha tecnología'
+    },
+    {
+      nombre:'Thor',
+      poder: 'Es el dios del trueno'
+    }
+  ];
+
 
 }

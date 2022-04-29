@@ -56,6 +56,16 @@ export class MenuComponent implements OnInit {
                 icon: 'pi pi-ellipsis-h',
                 routerLink: 'not-commons'
               },
+              {
+                label: 'Key-Value',
+                icon: 'pi pi-map',
+                routerLink: 'not-commons'
+              },
+              {
+                label: 'Json',
+                icon: 'pi pi-sitemap',
+                routerLink: 'not-commons'
+              },
             ]
           }
         ]
