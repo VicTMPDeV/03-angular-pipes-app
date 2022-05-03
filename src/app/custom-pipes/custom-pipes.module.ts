@@ -9,7 +9,6 @@ import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 import { DatesComponent } from './pages/dates/dates.component';
 import { NumbersComponent } from './pages/numbers/numbers.component';
 import { NotCommonsComponent } from './pages/not-commons/not-commons.component';
-import { SortComponent } from './pages/sort/sort.component';
 import { TextsComponent } from './pages/texts/texts.component';
 
 @NgModule({
@@ -17,14 +16,12 @@ import { TextsComponent } from './pages/texts/texts.component';
     DatesComponent,
     NumbersComponent,
     NotCommonsComponent,
-    SortComponent,
     TextsComponent
   ],
   exports: [
     DatesComponent,
     NumbersComponent,
     NotCommonsComponent,
-    SortComponent,
     TextsComponent
   ],
   imports: [

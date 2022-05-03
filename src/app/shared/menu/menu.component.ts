@@ -74,17 +74,6 @@ export class MenuComponent implements OnInit {
             ]
           }
         ]
-      },
-      {
-        label: 'Pipes Personalizados',
-        icon: 'pi pi-cog',
-        items: [
-          {
-            label: 'Ordenación',
-            icon: 'pi pi-align-left',
-            routerLink: 'sort'
-          }
-        ]
       }
     ];
   }
